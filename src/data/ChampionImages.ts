@@ -7,7 +7,7 @@ export interface ChampionImage {
 
 export class ChampionImages {
 
-    private readonly images: ChampionImage[];
+    public readonly images: ChampionImage[];
 
     constructor(images: ChampionImage[]) {
         this.images = images;
@@ -40,7 +40,7 @@ export async function loadImages(): Promise<ChampionImage[]> {
 
         return {
             src,
-            label: src.split('_')[0],
+            label: src.split("/").at(-1)!.split("_")[0],
         };
     }));
 }
