@@ -12,6 +12,7 @@ function App() {
     const [currentChampionImage, setCurrentChampionImage] = useState<ChampionImage | undefined>(undefined);
     const [value, setValue] = useState("")
     const [correctGuess, setCorrectGuess] = useState<boolean | undefined>(undefined)
+    const [numOfGuesses, setNumOfGuesses] = useState(0)
 
     useEffect(() => {
         loadImages().then((loadedImages) => {
@@ -24,6 +25,7 @@ function App() {
     }, [championImages]);
 
     function onSubmit() {
+        setNumOfGuesses((prev) => prev + 1)
         setCorrectGuess(value === currentChampionImage?.label)
     }
 
@@ -37,6 +39,8 @@ function App() {
                     {correctGuess? "You are Correct!!!!" : "BOOOOO you wrong"}
                 </AlertDescription>
             </Alert>
+            <h3>Number of Guesses so Far</h3>
+            <p>{numOfGuesses}</p>
         </>
     )
 }
