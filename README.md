@@ -1,8 +1,30 @@
 # GETTING STARTED
 
+## Run locally
+
 ```
   npm install
   npm run dev
+```
+
+## Build
+
+```
+  npm run build
+```
+
+## Set up Firebase hosting
+
+```
+  npm install -g firebase-tools
+  firebase login
+  firebase init
+```
+
+## Deploy to Firebase (this command also builds automatically)
+
+```
+  npm run deploy
 ```
 
 # React + TypeScript + Vite
