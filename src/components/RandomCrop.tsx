@@ -4,8 +4,8 @@ export interface RandomCropProps {
     src: string;
 }
 
-const WHOLE_IMAGE_HEIGHT = 450;
-const WHOLE_IMAGE_WIDTH = 800;
+const WHOLE_IMAGE_HEIGHT = 900;
+const WHOLE_IMAGE_WIDTH = 1600;
 
 const CROP_WIDTH = 200;
 const CROP_HEIGHT = 200;
