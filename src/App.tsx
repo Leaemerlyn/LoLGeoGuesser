@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { ChampionImage, ChampionImages, loadImages } from './data/ChampionImages';
 
 function App() {
-
+  
     const [championImages, setChampionImages] = useState<ChampionImages | undefined>(undefined);
     const [currentChampionImage, setCurrentChampionImage] = useState<ChampionImage | undefined>(undefined);
 
@@ -26,7 +26,6 @@ function App() {
             <Slider defaultValue={[33]} max={100} step={1} />
             {currentChampionImage && <RandomCrop src={currentChampionImage.src} />}
         </>
-
     )
 }
 
