@@ -1,11 +1,12 @@
 import AatroxOriginal from './assets/Original_Skin/Aatrox_OriginalSkin_HD.jpg'
 import './App.css'
+import { RandomCrop } from './components/RandomCrop'
 
 function App() {
 
     return (
         <>
-            <img src={AatroxOriginal} style={{ "height": "500px" }} />
+            <RandomCrop src={AatroxOriginal} />
         </>
     )
 }
