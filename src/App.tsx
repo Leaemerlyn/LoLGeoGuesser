@@ -34,11 +34,11 @@ function App() {
             {currentChampionImage && <RandomCrop src={currentChampionImage.src} />}
             {championImages && <ComboBox championList={championImages.images} value={value} setValue={setValue} />}
             <Button variant={'outline'} onClick={onSubmit}>Submit Guess</Button>
-            <Alert>
+            {correctGuess !== undefined && <Alert>
                 <AlertDescription>
-                    {correctGuess? "You are Correct!!!!" : "BOOOOO you wrong"}
+                    {correctGuess ? "You are Correct!!!!" : "BOOOOO you wrong"}
                 </AlertDescription>
-            </Alert>
+            </Alert>}
             <h3>Number of Guesses so Far</h3>
             <p>{numOfGuesses}</p>
         </>
