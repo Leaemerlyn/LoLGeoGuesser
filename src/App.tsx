@@ -39,6 +39,7 @@ function App() {
                     {correctGuess ? "You are Correct!!!!" : "BOOOOO you wrong"}
                 </AlertDescription>
             </Alert>}
+            {currentChampionImage != undefined && correctGuess ? <img src={currentChampionImage.src} />: ""}
             <h3>Number of Guesses so Far</h3>
             <p>{numOfGuesses}</p>
         </>
