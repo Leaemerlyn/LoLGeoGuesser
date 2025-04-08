@@ -83,8 +83,8 @@ export default tseslint.config({
 
 ## Contributor
 
-Thomas W.
-Lea E.
-David X.
-Katrina S.
-ZhiYang C. (just observer)
+- Thomas W.
+- Lea E.
+- David X.
+- Katrina S.
+- ZhiYang C. (just observer)
