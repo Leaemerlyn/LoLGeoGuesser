@@ -10,7 +10,7 @@ function App() {
 
     const [championImages, setChampionImages] = useState<ChampionImages | undefined>(undefined);
     const [currentChampionImage, setCurrentChampionImage] = useState<ChampionImage | undefined>(undefined);
-    const [value, setValue] = useState("")
+    const [currentGuess, setCurrentGuess] = useState("") // current champion guesses
     const [correctGuess, setCorrectGuess] = useState<boolean | undefined>(undefined)
     const [numOfGuesses, setNumOfGuesses] = useState(0)
 
@@ -26,14 +26,26 @@ function App() {
 
     function onSubmit() {
         setNumOfGuesses((prev) => prev + 1)
-        setCorrectGuess(value === currentChampionImage?.label)
+        setCorrectGuess(currentGuess === currentChampionImage?.label)
     }
+
+    function onReset() {
+        if (!championImages) return;
+        setCurrentChampionImage(championImages.getRandomImage(currentChampionImage));
+        setCurrentGuess("");
+        setCorrectGuess(undefined);
+        setNumOfGuesses(0);
+    }
+
+    // add onclick button > reset current champion to a new random champion (just use UseEffect) > set # of guesses back to zero > set current guess back to empty string > set correct guess to undefined 
+    // maybe organize this return to be easier reads lea dont love all the braces 
 
     return (
         <>
             {currentChampionImage && <RandomCrop src={currentChampionImage.src} />}
-            {championImages && <ComboBox championList={championImages.images} value={value} setValue={setValue} />}
+            {championImages && <ComboBox championList={championImages.images} value={currentGuess} setValue={setCurrentGuess} />}
             <Button variant={'outline'} onClick={onSubmit}>Submit Guess</Button>
+            <Button variant={'secondary'} onClick={onReset}>Next</Button>
             {correctGuess !== undefined && <Alert>
                 <AlertDescription>
                     {correctGuess ? "You are Correct!!!!" : "BOOOOO you wrong"}

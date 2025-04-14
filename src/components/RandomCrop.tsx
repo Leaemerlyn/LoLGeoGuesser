@@ -25,7 +25,6 @@ export const RandomCrop: FC<RandomCropProps> = (props) => {
         return Math.floor(Math.random() * yRange);
     }, [xRange]);
 
-    console.log(`xTranslate: ${xTranslate}, yTranslate: ${yTranslate}`);
 
     return <div style={{ overflow: 'hidden', width: `${CROP_WIDTH}px`, height: `${CROP_HEIGHT}px` }}>
         <img src={src} style={{ height: `${WHOLE_IMAGE_HEIGHT}px`, width: `${WHOLE_IMAGE_WIDTH}px`, maxWidth: `${WHOLE_IMAGE_WIDTH}px`, translate: `-${xTranslate}px -${yTranslate}px` }} />
